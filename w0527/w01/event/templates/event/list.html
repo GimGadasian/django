@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 목록</title>
+</head>
+<body>
+    <h2>이벤트 목록</h2>
+    <ul>
+        {% for event in list %}
+            <li>{{event.no}}</li>
+            <li>{{event.title}}</li>
+            <li>{{event.startdate}}</li>
+            <li>{{event.enddate}}</li>
+            <li>{{event.rdate}}</li>
+            <li></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

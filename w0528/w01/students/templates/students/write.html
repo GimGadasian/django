@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    
+</head>
+<body>
+    <h2>students information update</h2>
+    <form action="/students/update/" method="post" name="frm">
+        {% csrf_token %}
+        <label>name</label>
+        <input type="text" name="name"><br>
+        <label>major</label>
+        <input type="text" name="major"><br>
+        <label>grade</label>
+        <input type="text" name="grade"><br>
+        <label>age</label>
+        <input type="text" name="age"><br>
+        <label>gender</label><br>
+        <label for="male">male</label>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="female">female</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <br>
+        <br>
+        <input type="submit" value="update">
+        <a href="/students/view/?name={{stu.name}}"><button type="button">go home</button></a>
+        </form>
+    
+</body>
+</html>

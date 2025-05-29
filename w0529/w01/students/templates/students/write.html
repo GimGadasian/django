@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write</title>
+</head>
+<body>
+    <h2>학생등록</h2>
+    <form action="/students/writeOK/" method='post' name='frm'>
+        {% csrf_token %}
+        <label>이름</label>
+        <input type="text" name='name'><br>
+        <label>학과</label>
+        <input type="text" name='major'><br>
+        <label>학년</label>
+        <input type="text" name='grade'><br>
+        <label>나이</label>
+        <input type="text" name='age'><br>
+
+        <label>성별</label><br>
+        <input type="radio" name='gender' value='남자' id='man'>
+        <label for=''>남자</label>
+        <input type="radio" name='gender' value='여자' id='woman'>
+        <label for=''>여자</label>
+        <br>
+        <label>취미</label><br>
+        <input type="checkbox" name='hobby' value='game' id='game'>
+        <label for='game'>게임</label>
+        <input type="checkbox" name='hobby' value='music' id='music'>
+        <label for='music'>음악</label>
+        <input type="checkbox" name='hobby' value='jogging' id='jogging'>
+        <label for='jogging'>조깅</label>
+        <input type="checkbox" name='hobby' value='reading' id='reading'>
+        <label for='reading'>독서</label>
+        <input type="checkbox" name='hobby' value='climbing' id='climbing'>
+        <label for='climbing'>등산</label>
+
+        <br>
+        <br>
+        <input type="submit" value="저장">
+        <a href="/"><button type='button'>홈</button></a> {% comment %} type 지정x -> action 주소로 이동 {% endcomment %}
+    </form>
+    
+</body>
+</html>

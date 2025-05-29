@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>홈화면</title>
+</head>
+<body>
+    <h2>홈화면</h2>
+    <ul>
+        <li><a href="/students/list">학생정보</a></li>
+        <li><a href="/students/write">학생정보등록</a></li>
+        
+        <li><a href="/stuscore/list">학생성적정보</a></li>
+        <li><a href="/event/list">할 일</a></li>
+        <li><a href="/admin/">관리자 페이지</a></li>
+
+        <p><a href="/students/view/?name=홍길동&age=20">name : 홍길동, age: 20</a></p>
+        <P><a href="/students/send/홍길동/20/">학생정보전송_restAPI</a></P>
+        <form name="frm"method="post"action="/students/list/">
+            {% csrf_token %}
+            <label>아이디</label>
+            <input type="text"name="id">
+            <br>
+            <label>비밀번호</label>
+            <input type="text"name="pw">
+            <br>
+            <label>전화번호</label>
+            <input type="text" name="phone">
+            <br>
+            <label>취미</label><br>
+            <input type="checkbox" name="hobby" value="게임" id="game">
+            <label for="game">게임</label>
+
+            <input type="checkbox" name="hobby" value="골프" id="golf">
+            <label for="golf">골프</label>
+
+            <input type="checkbox" name="hobby" value="독서" id="reading">
+            <label for="reading">독서</label>
+
+            <input type="checkbox" name="hobby" value="여행" id="travel">
+            <label for="travel">여행</label>
+
+            <input type="checkbox" name="hobby" value="운동" id="exercise">
+            <label for="exercise">운동</label><br>
+
+            <input type="submit" name="send">
+
+            </form>
+
+    </ul>
+</body>
+</html>

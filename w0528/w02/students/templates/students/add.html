@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<body>
+    <h2>Student's information to register</h2>
+    <form action="" method='POST' name='frm'>
+        {% csrf_token %}
+        <label>name</label>
+        <input type="text" name="name"><br>
+
+        <label>major</label>
+        <input type="text" name="major"><br>
+
+        <label>grade</label>
+        <input type="text" name="grade"><br>
+
+        <label>age</label>
+        <input type="text" name="age"><br>
+
+        <label>gender</label><br>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for='male'>male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for='female'>female</label>
+        <br>
+        <br>
+        <input type="submit" value="save">
+        <a href="/"><button>go home</button></a>
+    </form>
+</body>
+</html>

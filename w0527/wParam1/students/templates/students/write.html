@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>write</title>
+</head>
+<body>
+    <h2>write students' info</h2>
+    <form action='/students/result/' method='post'>
+        {% csrf_token %}
+        <label>ID</label>
+        <input type="text" name="id" id="id"><br>
+        <label>PW</label>
+        <input type="text" name="pw" id="pw"><br>
+        <label>name</label>
+        <input type="text" name="name" id="name"><br>
+        <label>age</label>
+        <input type="text" name="age" id="age"><br>
+        <label>gender</label>
+        <input type="text" name="gender" id="gender"><br>
+
+        <label>hobby:</label>
+         <input type="checkbox" name="hobby" value="게임" id="game">
+        <label for="game">game</label>
+
+        <input type="checkbox" name="hobby" value="골프" id="golf">
+        <label for="golf">golf</label>
+
+        <input type="checkbox" name="hobby" value="독서" id="reading">
+        <label for="reading">reading</label>
+
+        <input type="checkbox" name="hobby" value="여행" id="travel">
+        <label for="travel">travel</label><br>
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

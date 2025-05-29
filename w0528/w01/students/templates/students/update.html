@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    
+</head>
+<body>
+    <h2>students registration</h2>
+    <form action="/students/update/{{stu.name}}/" method="post" name="frm">
+        {% csrf_token %}
+        <label>name</label>
+        <input type="text" name="name" value="{{stu.name}}"><br>
+        <label>major</label>
+        <input type="text" name="major" value="{{stu.major}}"><br>
+        <label>grade</label>
+        <input type="text" name="grade" value="{{stu.grade}}"><br>
+        <label>age</label>
+        <input type="text" name="age" value="{{stu.age}}"><br>
+        <label>gender</label><br>
+        <label for="male">male</label>
+        <input type="radio" name="gender" value="male" id="male" {% if 'male' in stu.gender%}checked{%endif%}> 
+        <label for="female">female</label>
+        <input type="radio" name="gender" value="female" id="female"{% if 'female' in stu.gender%}checked{%endif%}>
+        <br>
+        <br>
+        <input type="submit" value="save">
+        <a href="/"><button type="button">go home</button></a>
+        </form>
+    
+</body>
+</html>
