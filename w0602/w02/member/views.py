@@ -16,19 +16,21 @@ def login(request):
         
         # store cookie in 'response'
         request.session['session_id'] = id
-        request.session['session_nick'] = qs.nick # object of Member, undefined in here
+        request.session['session_nick'] = qs.nick 
         
         context = {'msg' : 1} # login sucessed
         response = render(request, 'member/login.html', context)
         
-        if idCheck != None: # store cookie for a day
-            response.set_cookie('idCheck', id, max_age=60*60*24)
+        if idCheck != None: 
+            response.set_cookie('idCheck', id, max_age=60*60*24) # store cookie for a day
         else:
             response.delete_cookie('idCheck') # delete cookie
         return response
 
     else: # request.method == 'GET'
         idCheck = request.COOKIES.get('idCheck', '')
+        context = {'save_id':idCheck}
+        return render(request, 'member/login.html', context)
         
         
      
