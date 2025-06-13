@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST</title>
+<style>
+/* 표 전체 스타일 */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* 테이블 헤더와 셀 */
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+/* 왼쪽 정렬 */
+td.left {
+    text-align: left;
+}
+
+/* 오른쪽 정렬 */
+td.right {
+    text-align: right;
+}
+
+/* 번호, 조회수 등 작은 셀 */
+td.tnone {
+    width: 60px;
+    color: #888;
+    background: #f9f9f9;
+}
+
+/* 링크 스타일 */
+td.left a {
+    color: #2a5db0;
+    text-decoration: none;
+    font-weight: bold;
+}
+td.left a:hover {
+    text-decoration: underline;
+}
+
+/* 행 hover 효과 */
+tr:hover {
+    background: #f1f7ff;
+}
+</style>
+
+</head>
+
+<body>
+    <h2>LIST</h2>
+	<div class="orderDivMt">
+						<table summary="NO, 제목, 등록일, 조회수 순으로 공지사항을 조회 하실수 있습니다." class="orderTable2" border="1" cellspacing="0">
+							<colgroup>
+							<col width="10%" class="tnone" />
+							<col width="*" />
+							<col width="14%" class="tw25" />
+							<col width="14%" class="tnone" />
+							<col width="14%" class="tnone" />
+							</colgroup>
+							<thead>
+								<th scope="col" class="tnone">NO.</th>
+								<th scope="col">제목</th>
+								<th scope="col" class="tnone">작성자</th>
+								<th scope="col">등록일</th>
+								<th scope="col" class="tnone">조회수</th>
+								
+							</thead>
+							<tbody>
+								<tr>
+									<td class="tnone">1</td>
+									<td class="left"><a href="#">title/img.jpg</a></td>
+									<td>id</td>
+									<td>[date| Y-m-d H:i:s]</td>
+									<td class="tnone right">n views</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+    
+</body>
+</html>

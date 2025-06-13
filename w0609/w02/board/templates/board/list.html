@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <meta name='csrf-token' content='{{csrf_token}}'>
+    <style>div{width:200px; height:100px; border:1px solid black; text-align:center; font-size:20px;}</style>
+
+    <script>
+    $(function(){
+    $('.ajaxBtn').click(function(){
+        alert('ajax button clicked');
+        console.log($('.id').val());
+        console.log($('.name').val());
+        let id = $('.id').val();
+        let name = $('.name').val();
+        let csrfToken = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            url: '/board/view2/',
+            type: 'post',
+            headers: {'X-CSRFToken': csrfToken}, // header → headers
+            data: {'id': id, 'name': name},      // 잘못된 data 문법 수정
+            success: function(data){
+                alert('sucessed');
+                let hdata = ``
+                hdata += `<h4>id: ${data.id}</h4>`
+                hdata += `<h4>name: ${data.name}</h4>`
+                hdata += `<h4>result: ${data.name}</h4>`
+                hdata += `<h4>${data.pw}</h4>`
+                $('.pw').prepend(hdata);
+            },
+            error: function(){
+                alert('failed');
+            }
+        });
+    });
+});
+</script>
+    </script>
+</head>
+<body>
+    <h2>LIST</h2>
+    <hr>
+    <h3>form data</h3>
+    <form action="/board/view/" name='frm' method='post'>
+        {% csrf_token %}
+        <label>id</label>
+        <input type="text" name='id'><br>
+        <label>name</label>
+        <input type="text" name='name'><br>
+        <input type="submit" value='send'>
+    </form>
+    <hr>
+    <h3>ajax</h3>
+    <label>id</label>
+    <input type="text" name='id' class='id'><br>
+    <label>name</label>
+    <input type="text" name='name' class='name'><br>
+    <input type="button" class='ajaxBtn' value='send'>
+    <div>[result]<span class='pw'></span></div>
+</body>
+</html>

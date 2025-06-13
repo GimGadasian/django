@@ -1,0 +1,4 @@
+function writeBtn() {
+    
+    writeFrm.submit()
+}

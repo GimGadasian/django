@@ -1,0 +1,25 @@
+/* 축제 배너 섹션 전체 스타일 */
+#festival-banner {
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;  /* 섹션 배경색 */
+  border-radius: 8px;
+  width: 500px; 
+  height: 700px;
+}
+
+#festival-banner .banner-container {
+  border: 1px solid black;
+  /* 필요한 경우 내부 여백 및 크기 조정 */
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+.banner-container img {
+  width: 100%;    /* 컨테이너 내에서 고정된 가로 크기 */
+  height: 100%;   /* 컨테이너 내에서 고정된 세로 크기 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너 크기에 맞게 자름 */
+  cursor: pointer;
+}
