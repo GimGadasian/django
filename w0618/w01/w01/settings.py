@@ -30,8 +30,10 @@ INSTALLED_APPS = [
     'member',
     'board',
     'chart',
+    'pboard',
+    'pboard2',
+    'pboard3',
     'kakao',
-    
 ]
 
 MIDDLEWARE = [

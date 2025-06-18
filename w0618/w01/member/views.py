@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from member.models import Member
 
 def login(request):
-    return render(request, 'member/login.html')
+    return render(request,'member/login.html')
 # id중복확인
 def idchk(request):
     id = request.POST.get('id','')
