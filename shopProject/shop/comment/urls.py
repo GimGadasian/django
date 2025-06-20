@@ -6,3 +6,4 @@ urlpatterns = [
     path('clist/', views.clist,name='clist'),
     path('cdelete/', views.cdelete,name='cdelete'),
 ]
+
