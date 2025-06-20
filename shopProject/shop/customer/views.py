@@ -127,4 +127,4 @@ def list(request):
     # 게시글 10개, 현재페이지 보냄
     context = {'list':customerList,'page':page}
     return render(request,'customer/list.html',context)
-    # return redirect('/customer/list/')
+    # return redirect('/customer/list/')   
