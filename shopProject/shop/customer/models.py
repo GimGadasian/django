@@ -3,7 +3,7 @@ from member.models import Member
 
 class Customer(models.Model):
     bno = models.AutoField(primary_key=True) #기본키 등록
-    # 외래키(Foreign Key)
+    # 외래키(Foreign Key)  
     member = models.ForeignKey(Member,on_delete=models.SET_NULL,null=True) # 회원탈퇴시 Null처리
     # member = models.ForeignKey(Member,on_delete=models.CASCADE) # 회원탈퇴시 모두삭제
     # id = models.CharField(max_length=100)    #작성자
